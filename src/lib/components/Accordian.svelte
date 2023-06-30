@@ -2,6 +2,13 @@
 	let open = false;
 	import Card from '../Card.svelte';
 	export let words;
+
+	const wordsTemplate = {
+		parot: 'parejo',
+		stop: 'derretir',
+		hello: 'hola',
+		strong: 'fuerte',
+	};
 </script>
 
 <div
@@ -48,11 +55,9 @@
 	</div>
 	{#if open}
 		<div class="flex flex-col gap-2">
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
+			{#each Object.entries(wordsTemplate) as [key, word]}
+				<Card {word} />
+			{/each}
 		</div>
 	{/if}
 </div>

@@ -1,5 +1,6 @@
 <script>
 	let open = false;
+	export let word;
 </script>
 
 <div
@@ -7,7 +8,7 @@
 >
 	<div class="flex items-center justify-between p-4">
 		<div class="text-lg font-semibold text-gray-700 capitalize dark:text-black">
-			Accordion
+			{word}
 		</div>
 		<button
 			class="w-6 h-6 text-gray-500 dark:text-gray-200"
@@ -45,11 +46,18 @@
 		</button>
 	</div>
 	{#if open}
-		<div class="flex flex-col gap-2">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quas
-			porro accusamus similique distinctio inventore consequuntur omnis
-			voluptates expedita, architecto vero iste libero corporis numquam sit?
-			Reiciendis consectetur rem libero.
+		<div class="flex flex-col items-center">
+			<input
+				class="p-2 m-2 rounded-md focus:none"
+				type="text"
+				placeholder="Search.."
+			/>
+			<div class="flex flex-col gap-2">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quas
+				porro accusamus similique distinctio inventore consequuntur omnis
+				voluptates expedita, architecto vero iste libero corporis numquam sit?
+				Reiciendis consectetur rem libero.
+			</div>
 		</div>
 	{/if}
 </div>
