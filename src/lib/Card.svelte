@@ -1,3 +1,55 @@
-<div class="p-4 text-gray-500 dark:text-gray-200 md:mx-4">
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<script>
+	let open = false;
+</script>
+
+<div
+	class="p-2 text-gray-800 dark:text-gray-800 md:mx-4 bg-gray-300 rounded-md"
+>
+	<div class="flex items-center justify-between p-4">
+		<div class="text-lg font-semibold text-gray-700 capitalize dark:text-black">
+			Accordion
+		</div>
+		<button
+			class="w-6 h-6 text-gray-500 dark:text-gray-200"
+			on:click={() => (open = !open)}
+		>
+			{#if open}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 9l-7 7-7-7"
+					/>
+				</svg>
+			{:else}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M5 15l7-7 7 7"
+					/>
+				</svg>
+			{/if}
+		</button>
+	</div>
+	{#if open}
+		<div class="flex flex-col gap-2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quas
+			porro accusamus similique distinctio inventore consequuntur omnis
+			voluptates expedita, architecto vero iste libero corporis numquam sit?
+			Reiciendis consectetur rem libero.
+		</div>
+	{/if}
 </div>

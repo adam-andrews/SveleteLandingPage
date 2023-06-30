@@ -1,6 +1,7 @@
 <script>
 	let open = false;
 	import Card from '../Card.svelte';
+	export let words;
 </script>
 
 <div
@@ -46,6 +47,12 @@
 		</button>
 	</div>
 	{#if open}
-		<Card />
+		<div class="flex flex-col gap-2">
+			<Card />
+			<Card />
+			<Card />
+			<Card />
+			<Card />
+		</div>
 	{/if}
 </div>
