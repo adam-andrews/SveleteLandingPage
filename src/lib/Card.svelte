@@ -1,6 +1,14 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
 	let open = false;
 	export let word;
+
+	const dispatch = createEventDispatcher();
+
+	function handleClick() {
+		open = !open;
+		dispatch('handleClick', { hello: word });
+	}
 </script>
 
 <div
@@ -12,7 +20,7 @@
 		</div>
 		<button
 			class="w-6 h-6 text-gray-500 dark:text-gray-200"
-			on:click={() => (open = !open)}
+			on:click={handleClick}
 		>
 			{#if open}
 				<svg
