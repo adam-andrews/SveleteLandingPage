@@ -1,6 +1,6 @@
 <script>
 	let open = false;
-	import Card from '../Card.svelte';
+	import Card from './Card.svelte';
 	export let word;
 
 	let showCards = true; // Reactive variable to control the view
